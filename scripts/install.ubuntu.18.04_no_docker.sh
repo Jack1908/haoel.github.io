@@ -125,7 +125,7 @@ install_gost() {
     KEY=${CERT_DIR}/live/${DOMAIN}/privkey.pem
 
     sudo snap run gost \
-        -v ${CERT_DIR}:${CERT_DIR}:ro \
+        -V ${CERT_DIR}:${CERT_DIR}:ro \
         --net=host ginuerzh/gost \
         -L "http2://${USER}:${PASS}@${BIND_IP}:${PORT}?cert=${CERT}&key=${KEY}&probe_resist=code:400&knock=www.google.com"
 }
